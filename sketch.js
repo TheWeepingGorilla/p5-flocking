@@ -7,9 +7,11 @@
 var s = function( p ) {
 
 	var boids = [];
+	var canvas;
 
 	p.setup = function() {
-	  p.createCanvas(p.windowWidth, p.windowHeight);
+	  canvas = p.createCanvas(p.windowWidth, 500);
+	  canvas.parent('canvasDiv');
 
 	  // Add an initial set of boids into the system
 	  for (var i = 0; i < 100; i++) {
@@ -212,4 +214,4 @@ var s = function( p ) {
 
 };
 
-var myp5 = new p5(s,'forceSketch');
+var myp5 = new p5(s, 'flockingSketch');
