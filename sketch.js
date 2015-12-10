@@ -10,7 +10,7 @@ var s = function( p ) {
 	var canvas;
 
 	p.setup = function() {
-	  canvas = p.createCanvas(p.windowWidth, 500);
+	  canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
 	  canvas.parent('canvasDiv');
 
 	  // Add an initial set of boids into the system
@@ -21,10 +21,14 @@ var s = function( p ) {
 
 	p.draw = function() {
 	  p.background(0);
+
 	  // Run all the boids
 	  for (var i = 0; i < boids.length; i++) {
 	    boids[i].run(boids);
-	  }
+	  };
+	  canvas.drawingContext.font = "60px Arial";
+	  canvas.drawingContext.fillStyle = "#D490C4";
+	  canvas.drawingContext.fillText("Text",p.windowWidth / 2.25, p.windowHeight / 4);
 	}
 
 	// Boid class
